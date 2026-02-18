@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        /*
+        
         stage('Build') {
             agent {
                 docker {
@@ -25,8 +25,7 @@ pipeline {
                     ls -ltrha
                 '''
             }
-        }
-        */
+        }    
 
         stage('Tests'){
 
