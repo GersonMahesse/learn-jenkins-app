@@ -98,6 +98,15 @@ pipeline {
                 '''
             }
         }
+        stage('Approval') {
+            steps {
+                timeout(time: 1, unit: 'MINUTES') {
+                    input 'Proceed Execution?'
+                    // It waits for 1 Minute, if no response is provided then it times out.
+                    }
+
+            }
+        }
         stage('Deploy to Prod') {
             agent {
                 docker {
